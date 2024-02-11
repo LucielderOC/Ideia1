@@ -1,6 +1,11 @@
 :root{
-    --main-bg-color: linear-gradient(180deg, rgba(238, 241, 233, 0.808) 0%, #acacab 48.44%, #e0f5e8 100%);
-    --fonte-principal: 'Italiana'
+    --main-bg-color: #cccccc;
+    --fonte-principal: 'Italiana';
+    --cor-do-botao: 
+}
+
+*{
+    max-width: 100%;
 }
 
 body{
@@ -13,55 +18,113 @@ body{
     padding: 2rem 5px 2rem 5px;
 }
 
+.cabeçalho{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    margin: 40px 10px 10px;
+    padding: 10px;
+    background-color: antiquewhite;
+}
 .departamentos__titulo{
-    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
     margin: 10px 0px 10px 8px;
 }
 
 h3{
+    font-size: 30px;
     text-align: center;
     margin: 5px 0px 5px 0px;
+    margin: 10px 0 10px 0;
 }
 
 .departamentos__lista{
     display:grid;
     align-content: center;
-    width: 100px;
 }
 
 .departamentos__item {
     display: grid;
     border: solid 1px;
     margin: 5px;
-    width: 170px;
 }
 
 img {
     width: 100%;
-    height: 100px;
     max-width: 100%;
+    max-height: 190px;
+    border-top: 1px  solid;
+    border-bottom: 1px solid;
 }
 
 .departamentos__botao{
-    height: 20px;
-    border-radius: 30px;
-    width: 100px;
-    font-size: 10px;
-    }
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--main-bg-color);
+    color: black;
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 0.5rem 0;
+    border-radius: 20px;
+    text-align: center;
+    width: 200px;
+    font-size: 20px;
+}
 
 .departamentos__conteiner__botao{
     display: flex;
     justify-content: center;
-    margin: 5px 0 5px 0;
+    margin: 10px 0 10px 0;
+}
+
+a:hover, a:active{
+    background: rgb(202, 194, 159);
 }
 
 @media(min-width: 720px){
-    .principal {
-        padding: 0 2rem;
+
+    .departamentos__titulo{
+        font-size: 50px;
+        border-bottom: 20px;
+    }
+    img {
+        max-height: 380px;
+    }
+
+    .departamentos__botao{
+        height: 30px;
+        border-radius: 30px;
+        width: 400px;
+        font-size: 30px;
+        }
+    
+    h3{
+        font-size: 50px;
     }
 }
 
 @media(min-width: 1440px){
-
+    .departamentos__lista{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "departamento departamento departamento departamento";
+    }
+    .departamentos__lista {
+        grid-area: departamento;
+    }
+    .departamentos__titulo{
+        font-size: 80px;
+    }
+    h3{
+        font-size: 40px;
+    }
+    img {
+        max-height: 200px;
+    }
+    .departamentos__botao{
+        width: 96%;
+        border-radius: 5px;
+    }
 }
 
